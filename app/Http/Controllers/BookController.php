@@ -6,15 +6,21 @@ use App\Http\Controllers\Controller;
 //use App;
 class BookController extends Controller
 {
-
-    /**
-    * Responds to requests to GET /books
-    */
     public function index()
     {
-        return 'Display all the books';
-        //return \App::environment();
-        //return App::environment();
+        return view('book.index');
+    }
+    public function show($title)
+    {
+        return view('book.show')->with('title', $title);
+    }
+    public function create()
+    {
+        return view('book.create');
+    }
+    public function edit($title)
+    {
+        return view('book.edit')->with('title', $title);
     }
 
-} # end of class
+} # end of BookController class

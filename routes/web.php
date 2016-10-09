@@ -31,13 +31,13 @@ Route::get("/practice/{var1}/{var2}", function($x, $y){
     return "Sum = " . $sum;
 });
 
+Route::get('/books/create', 'BookController@create')->name('books.create');
+Route::get('/books/{title}', 'BookController@show')->name('books.show');
+Route::get('/books', 'BookController@index')->name('books.index');
+Route::get('/books/{title}/edit', 'BookController@edit')->name('books.edit');
 
-//Route::get('/practice/{var1}/{var2}', 'PracticeController@index($x,$y)')->('practice.index');
-
-Route::get('/books',"BookController@index")->name('books.index');
-
+/*
 Route::get('/books/create', function() {
-
     $view  = '<form method="POST" action="/books/create">';
     $view .= csrf_field(); # This will be explained more later
     $view .= '<label>Title: <input type="text" name="title"></label>';
@@ -45,13 +45,11 @@ Route::get('/books/create', function() {
     $view .= '</form>';
     return $view;
 
-});
+});*/
 
-
+/*
 Route::post('/books/create', function() {
-
     dd(Request::all());
-
 });
 
 Route::get("books/show/{title?}", function($title = ''){
@@ -60,6 +58,8 @@ Route::get("books/show/{title?}", function($title = ''){
     }
     return "The title of the book: " . $title . "<br>";
 })->name('books.show');
+*/
+
 
 Route::get('/example', function() {
     return App::environment();
