@@ -6,10 +6,9 @@ use App\Http\Controllers\Controller;
 //use App;
 class PracticeController extends Controller
 {
-    public function index($x, $y)
-    {
-        $sum = $x + $y;
-        return "Sum = " . $sum;
+    public function index(){
+        return "Hi";
     }
+
 
 } # end of class
