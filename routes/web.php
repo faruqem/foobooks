@@ -135,3 +135,16 @@ if(App::environment('local')) {
     });
 
 };
+
+//Create a database
+if(App::environment('local')) {
+
+    Route::get('/create-db', function() {
+
+        //DB::statement('DROP database foobooks');
+        DB::statement('CREATE database foobooks');
+
+        return 'Dropped foobooks; created foobooks.';
+    });
+
+};
