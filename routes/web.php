@@ -10,6 +10,23 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+
+
+Route::get('/books/last-x-books', 'BookController@last_x_books')->name('books.last-x-books');
+Route::get('/books/published-after-year-x', 'BookController@published_after_year_x')->name('books.published_after-year-x');
+Route::get('/books/all-order-by-title', 'BookController@all_order_by_title')->name('books.all-order-by-title');
+Route::get('/books/all-order-by-published-desc', 'BookController@all_order_by_published_desc')->name('books.all-order-by-published-desc');
+Route::get('/books/edit-a-author', 'BookController@edit_a_author')->name('books.edit-a-author');
+Route::get('/books/delete-all-book-by-author', 'BookController@delete_all_book_by_author')->name('books.delete-all-book-by-author');
+
+
+
+Route::get('/books/create', 'BookController@create')->name('books.create');
+Route::get('/books', 'BookController@index')->name('books.index');
+//Route::get('/books/{title}/edit', 'BookController@edit')->name('books.edit');
+Route::get('/books/edit-a-book', 'BookController@edit_a_book')->name('books.edit');
+Route::get('/books/delete-a-book', 'BookController@delete_a_book')->name('books.delete');
+Route::get('/books/{title}', 'BookController@show')->name('books.show');
 Route::get("/practice", "PracticeController@index")->name('practice.index');
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
@@ -42,10 +59,7 @@ Route::get('/random', function() {
 
 
 
-Route::get('/books/create', 'BookController@create')->name('books.create');
-Route::get('/books/{title}', 'BookController@show')->name('books.show');
-Route::get('/books', 'BookController@index')->name('books.index');
-Route::get('/books/{title}/edit', 'BookController@edit')->name('books.edit');
+
 
 /*
 Route::get('/books/create', function() {
